@@ -11,7 +11,7 @@ namespace ApartmentManagementSystem.Persistance.Context
 {
     public class ApartmentManagementSystemDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
-        DbSet<Daire> daires { get; set; }
+        DbSet<Daire> daireler { get; set; }
 
         DbSet<Subscription> subscriptions { get; set; }
 
