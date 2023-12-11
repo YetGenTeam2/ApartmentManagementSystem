@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{433CDE0C-5C00-46C7-A7DE-FC33B6264F7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentManagementSystem.Domain", "Core\ApartmentManagementSystem.Domain\ApartmentManagementSystem.Domain.csproj", "{2E02DBDA-8663-4BB5-840B-509B4899D9CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagementSystem.Domain", "Core\ApartmentManagementSystem.Domain\ApartmentManagementSystem.Domain.csproj", "{2E02DBDA-8663-4BB5-840B-509B4899D9CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentManagementSystem.Persistance", "Infrastructure\ApartmentManagementSystem.Persistance\ApartmentManagementSystem.Persistance.csproj", "{5C2C1C41-D2DB-4C2D-9F34-59461B140EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagementSystem.Persistance", "Infrastructure\ApartmentManagementSystem.Persistance\ApartmentManagementSystem.Persistance.csproj", "{5C2C1C41-D2DB-4C2D-9F34-59461B140EBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentManagementSystem.MVC", "Presentation\ApartmentManagementSystem.MVC\ApartmentManagementSystem.MVC.csproj", "{D9204312-FC04-46EC-BB5C-608372972171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagementSystem.MVC", "Presentation\ApartmentManagementSystem.MVC\ApartmentManagementSystem.MVC.csproj", "{D9204312-FC04-46EC-BB5C-608372972171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
