@@ -11,15 +11,16 @@ namespace ApartmentManagementSystem.Persistance.Context
 {
     public class ApartmentManagementSystemDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
-        DbSet<Daire> daires { get; set; }
-
-        DbSet<Subscription> subscriptions { get; set; }
+        
 
         public ApartmentManagementSystemDbContext(DbContextOptions<ApartmentManagementSystemDbContext> options) : base(options)
         {
 
         }
+        public ApartmentManagementSystemDbContext() { }
+        DbSet<Daire> daires { get; set; }
 
+        DbSet<Subscription> subscriptions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -17,11 +17,4 @@ namespace ApartmentManagementSystem.Domain.Common
 
         public DateTime? DeletedOn { get; set; }
     }
-
-   
-
-
-
-
-
 }
