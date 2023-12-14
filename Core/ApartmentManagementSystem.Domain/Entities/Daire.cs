@@ -15,14 +15,9 @@ namespace ApartmentManagementSystem.Domain.Entities
         public DateTime? DeletedOn { get; set; }
         DateTime IModifiedOn.ModifiedOn { get; set; }
         DateTime IDeletedOn.DeletedOn { get; set; }
-
-     
-
         public int floorNo { get; set; }
 
         public string daireNo { get; set; }
-
-
         public AppUser user { get; set; }
 
         public List<Subscription> subscriptions { get; set; }
