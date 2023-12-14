@@ -1,4 +1,5 @@
 ﻿﻿@using ApartmentManagementSystem.MVC.Models.Request
+@await Component.InvokeAsync("NToastNotify")
 @model SignUpRequest
 @{
     ViewData["Title"] = "SignUp";
@@ -20,7 +21,7 @@
         }
         <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
 
-        <form asp-controller="Home" asp-action="SignUp" method="post">
+        <form asp-controller="auth" asp-action="SignUp" method="post">
             <div class="row mb-3">
                 <label for="firstName" class="col-md-4 col-form-label" asp-for="firstName"></label>
                 <div class="col-sm-8">
