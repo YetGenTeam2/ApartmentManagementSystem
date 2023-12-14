@@ -1,3 +1,4 @@
+using ApartmentManagementSystem.Domain.Entities;
 using ApartmentManagementSystem.Persistance;
 using ApartmentManagementSystem.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,8 @@ builder.Services.AddDbContext<ApartmentManagementSystemDbContext>(options =>
 {
     options.UseNpgsql(Configurations.GetString("ConnectionStrings:PostgreSQL"));
 });
+builder.Services.AddIdentity<AppUser, AppRole>()
+            .AddEntityFrameworkStores<ApartmentManagementSystemDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
