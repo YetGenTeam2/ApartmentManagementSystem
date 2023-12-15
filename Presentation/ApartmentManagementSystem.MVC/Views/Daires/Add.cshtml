@@ -1,0 +1,66 @@
+﻿@using ApartmentManagementSystem.MVC.Models.Request
+@await Component.InvokeAsync("NToastNotify")
+@model DairesRequest
+@{
+    ViewData["Title"] = "Daires";
+}
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center mb-4">Daire Ekleme Sayfası</h2>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-info" role="alert">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            <form asp-controller="daires" asp-action="Add" method="post">
+                <div class="mb-3 row">
+                    <label for="DaireNo" class="col-md-4 col-form-label">Daire No</label>
+                    <div class="col-sm-8">
+                        <input asp-for="DaireNo" class="form-control">
+                        <span class="text-danger" asp-validation-for="DaireNo"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="FloorNo" class="col-md-4 col-form-label">Kat No</label>
+                    <div class="col-sm-8">
+                        <input asp-for="FloorNo" class="form-control">
+                        <span class="text-danger" asp-validation-for="FloorNo"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="UserId" class="col-md-4 col-form-label">Kullanıcı</label>
+                    <div class="col-sm-8">
+                        <input asp-for="UserId" class="form-control">
+                        <span class="text-danger" asp-validation-for="UserId"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="Subscriptions" class="col-md-4 col-form-label">Aidat</label>
+                    <div class="col-sm-8">
+                        <input asp-for="Subscriptions" class="form-control">
+                        <span class="text-danger" asp-validation-for="Subscriptions"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 offset-md-4">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
