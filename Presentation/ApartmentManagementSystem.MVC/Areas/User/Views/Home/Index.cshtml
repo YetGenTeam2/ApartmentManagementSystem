@@ -1,4 +1,5 @@
 ﻿@await Component.InvokeAsync("NToastNotify")
+
 @{
     ViewData["Title"] = "User Home Page";
 }
@@ -8,7 +9,7 @@
     <h1 class="display-4">Sayın @User.Identity.Name, yapmak istediğiniz işlemi seçiniz</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     <div class="mt-4">
-        <a href="@Url.Action("Contact", "User")" class="btn btn-primary btn-lg mr-3">Admin'e Mesaj Gönder</a>
+        <a href="@Url.Action("Contact", "Home")" class="btn btn-primary btn-lg mr-3">Admin'e Mesaj Gönder</a>
   
     </div>
 </div>

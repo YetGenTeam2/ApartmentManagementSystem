@@ -1,4 +1,4 @@
-﻿namespace ApartmentManagementSystem.MVC.Models
+﻿namespace ApartmentManagementSystem.MVC.Areas.User.Models
 {
     public class ContactModel
     {

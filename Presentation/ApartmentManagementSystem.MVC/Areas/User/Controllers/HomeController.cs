@@ -1,23 +1,27 @@
 ﻿using ApartmentManagementSystem.Domain.Entities;
-using ApartmentManagementSystem.MVC.Models;
+using ApartmentManagementSystem.MVC.Areas.User.Models;
 using ApartmentManagementSystem.Persistance.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 
 namespace ApartmentManagementSystem.MVC.Areas.User.Controllers
 {
+    [Area("User")]
     [Authorize(Roles = "User")]
-    public class UserController : Controller
+    public class HomeController : Controller
     {
         private readonly ApartmentManagementSystemDbContext _context;
         private readonly UserManager<AppUser> _UserManager;
+        private readonly IToastNotification _toastNotification;
 
-        public UserController(ApartmentManagementSystemDbContext context, UserManager<AppUser> userManager)
+        public HomeController(ApartmentManagementSystemDbContext context, UserManager<AppUser> userManager, IToastNotification toastNotification)
         {
             _context = context;
             _UserManager = userManager;
+            _toastNotification = toastNotification;
         }
 
         public IActionResult Index()
@@ -52,6 +56,7 @@ namespace ApartmentManagementSystem.MVC.Areas.User.Controllers
             };
 
             // Entity Framework veya veri erişim yönteminize göre veriyi veritabanına kaydedin.
+            _toastNotification.AddSuccessToastMessage("Mesajınız başarıyla yöneticiye iletilmiştir.");
             _context.ContactMessages.Add(contactMessage);
             _context.SaveChanges();
 
