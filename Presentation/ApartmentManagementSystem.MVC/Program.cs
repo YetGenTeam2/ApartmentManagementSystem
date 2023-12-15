@@ -6,11 +6,15 @@ using Microsoft.EntityFrameworkCore;
 using Resend;
 using ApartmentManagementSystem.MVC;
 
-
 var builder = WebApplication.CreateBuilder(args);
-Startup.ConfigureServices(builder.Services);
+
+// ConfigureServices metodu için Startup sýnýfýný kullan
+var startup = new Startup(builder.Configuration);
+startup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
-Startup.Configure(app, builder.Environment);
+
+// Configure metodu için Startup sýnýfýný kullan
+startup.Configure(app, builder.Environment);
 
 app.Run();

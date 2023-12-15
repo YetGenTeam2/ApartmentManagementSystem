@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
 using Resend;
+using System.Data;
 using System.Web;
 
 namespace ApartmentManagementSystem.MVC.Controllers
@@ -48,8 +49,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
             AppUser user = new AppUser() { UserName = request.PhoneNumber, firstName = request.firstName, lastName = request.lastName, Email = request.Email, PhoneNumber = request.PhoneNumber };
             var identityResult = await _UserManager.CreateAsync(user,
                  password: request.PasswordConfirm);
-
-
+            await _UserManager.AddToRoleAsync(user, "User");
             if (identityResult.Succeeded)
             {
                 

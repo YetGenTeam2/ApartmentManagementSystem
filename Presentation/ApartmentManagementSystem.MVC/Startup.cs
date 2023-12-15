@@ -7,9 +7,14 @@ using Resend;
 
 namespace ApartmentManagementSystem.MVC
 {
-    public static class Startup
+    public class Startup
     {
-        public static void ConfigureServices(IServiceCollection services)
+        private readonly IConfiguration _configuration;
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
             services.AddDbContext<ApartmentManagementSystemDbContext>(options =>
@@ -60,7 +65,7 @@ namespace ApartmentManagementSystem.MVC
             });
             services.AddHttpContextAccessor();
         }
-        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -71,27 +76,25 @@ namespace ApartmentManagementSystem.MVC
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
             app.UseNToastNotify();
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                      name: "default",
-                      template: "{controller=Home}/{action=Index}/{id?}");
-            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
 
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                  name: "areas",
-                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                );
+                    name: "areaRoute",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
