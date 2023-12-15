@@ -3,6 +3,7 @@ using System;
 using ApartmentManagementSystem.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ApartmentManagementSystem.Persistance.Migrations
 {
     [DbContext(typeof(ApartmentManagementSystemDbContext))]
-    partial class ApartmentManagementSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231214211351_mig_2_contact")]
+    partial class mig_2_contact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

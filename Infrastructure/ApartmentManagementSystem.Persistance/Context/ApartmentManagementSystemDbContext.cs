@@ -18,9 +18,10 @@ namespace ApartmentManagementSystem.Persistance.Context
 
         }
         public ApartmentManagementSystemDbContext() { }
-        DbSet<Daire> daires { get; set; }
+        public DbSet<Daire> daires { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
 
-        DbSet<Subscription> subscriptions { get; set; }
+        public DbSet<Subscription> subscriptions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
