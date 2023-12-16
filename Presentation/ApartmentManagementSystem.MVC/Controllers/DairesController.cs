@@ -16,13 +16,15 @@ namespace ApartmentManagementSystem.MVC.Controllers
         private readonly IResend _resend;
         private readonly UserManager<AppUser> _userManager;
 
-        public DairesController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager)
+        public DairesController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager, ApartmentManagementSystemDbContext context)
         {
             _logger = logger;
             _toastNotification = toastNotification;
             _resend = resend;
             _userManager = userManager;
+            _context = context;
         }
+
 
 
         public IActionResult Index()
@@ -38,7 +40,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddDaires( DairesRequest request)
+        public async Task<IActionResult> Add(DairesRequest request)
         {
 
             if (!ModelState.IsValid)
@@ -48,20 +50,59 @@ namespace ApartmentManagementSystem.MVC.Controllers
 
             _toastNotification.AddSuccessToastMessage("Daire bilgileri başarıyla kaydedildi.");
 
-            Daire daire = new ();
-            daire.daireNo = request.DaireNo;
-            daire.floorNo = request.FloorNo;
-            daire.user.Id = request.UserId;
-            foreach (var subscription in daire.subscriptions)
+
+            Daire daire = new();
+
+            if (request != null)
             {
-                subscription.price = request.Subscriptions;
-                subscription.isPaid = false;
+                daire.daireNo = request.DaireNo;
+                daire.floorNo = request.FloorNo;
+
+                // Kullanıcıyı UserManager ile çek
+                var User = await _userManager.FindByIdAsync(request.UserId);
+
+                // User'ı başlat
+                daire.user = User;
+
+                AppUser DaireUser = new AppUser
+                {
+                    UserName = daire.user.UserName,
+                    firstName = daire.user.firstName, 
+                    lastName = daire.user.lastName,
+                    PhoneNumber = daire.user.PhoneNumber,
+                    Email = daire.user.Email
+                };
+
+                // Subscriptions listesini başlat
+                daire.subscriptions = new List<Subscription>();
+
+                // Subscriptions'ları request.Subscriptions'tan kopyala               
+                    var subscription = new Subscription
+                    {
+                        price = request.Subscriptions,
+                        isPaid = false // Varsayılan değeri false olarak ayarla
+                    };
+
+                    daire.subscriptions.Add(subscription);   
+                
+                daire.CreatedOn = DateTime.UtcNow;
+
+                // Daire nesnesini veritabanına ekleyin
+                _context.daires.Add(daire);
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    // Hata mesajını logla
+                    _logger.LogError(ex, "SaveChangesAsync hatası");
+                    throw; // Hatanın tekrar fırlatılması
+                }
+
+
             }
-            
-
-            daire.CreatedOn = DateTime.UtcNow;
-
-
 
             return View();
 
