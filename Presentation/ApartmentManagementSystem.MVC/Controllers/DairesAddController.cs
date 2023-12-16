@@ -8,6 +8,7 @@ using Resend;
 
 namespace ApartmentManagementSystem.MVC.Controllers
 {
+    
     public class DairesAddController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -39,7 +40,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost] // https://localhost:7063/DairesAdd/Add
         public async Task<IActionResult> Add(DairesRequest request)
         {
 
