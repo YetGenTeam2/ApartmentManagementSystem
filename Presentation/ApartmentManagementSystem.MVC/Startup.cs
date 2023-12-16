@@ -46,6 +46,7 @@ namespace ApartmentManagementSystem.MVC
             });
             services.AddTransient<IResend, ResendClient>();
             services.AddMvc(options => options.EnableEndpointRouting = false).AddNToastNotifyToastr();
+            services.AddMvc().AddNToastNotifyToastr();
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminPolicy", policy =>
@@ -95,6 +96,11 @@ namespace ApartmentManagementSystem.MVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                     name: "admin",
+                     pattern: "{area=Admin}/{controller=DairesAdd}/{action=Add}");
+
             });
         }
     }

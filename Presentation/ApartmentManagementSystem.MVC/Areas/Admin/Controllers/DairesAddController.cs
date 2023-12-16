@@ -1,14 +1,17 @@
 ﻿using ApartmentManagementSystem.Domain.Entities;
-using ApartmentManagementSystem.MVC.Models.Request;
+using ApartmentManagementSystem.MVC.Areas.Admin.Models;
 using ApartmentManagementSystem.Persistance.Context;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using NToastNotify;
 using Resend;
 
-namespace ApartmentManagementSystem.MVC.Controllers
+namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
 {
-    
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class DairesAddController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -40,12 +43,13 @@ namespace ApartmentManagementSystem.MVC.Controllers
             return View();
         }
 
-        [HttpPost] // https://localhost:7063/DairesAdd/Add
-        public async Task<IActionResult> Add(DairesRequest request)
+        [HttpPost]
+        public async Task<IActionResult> Add(DairesAddModel request)
         {
 
             if (!ModelState.IsValid)
             {
+
                 return View();
             }
 
@@ -62,13 +66,15 @@ namespace ApartmentManagementSystem.MVC.Controllers
                 // Kullanıcıyı UserManager ile çek
                 var User = await _userManager.FindByIdAsync(request.UserId);
 
+
+
                 // User'ı başlat
                 daire.user = User;
 
                 AppUser DaireUser = new AppUser
                 {
                     UserName = daire.user.UserName,
-                    firstName = daire.user.firstName, 
+                    firstName = daire.user.firstName,
                     lastName = daire.user.lastName,
                     PhoneNumber = daire.user.PhoneNumber,
                     Email = daire.user.Email
@@ -78,14 +84,14 @@ namespace ApartmentManagementSystem.MVC.Controllers
                 daire.subscriptions = new List<Subscription>();
 
                 // Subscriptions'ları request.Subscriptions'tan kopyala               
-                    var subscription = new Subscription
-                    {
-                        price = request.Subscriptions,
-                        isPaid = false // Varsayılan değeri false olarak ayarla
-                    };
+                var subscription = new Subscription
+                {
+                    price = request.Subscriptions,
+                    isPaid = false // Varsayılan değeri false olarak ayarla
+                };
 
-                    daire.subscriptions.Add(subscription);   
-                
+                daire.subscriptions.Add(subscription);
+
                 daire.CreatedOn = DateTime.UtcNow;
 
                 // Daire nesnesini veritabanına ekleyin
@@ -103,11 +109,18 @@ namespace ApartmentManagementSystem.MVC.Controllers
                 }
 
 
-            }
+            };
 
             return View();
 
 
         }
+      
+
+
     }
+    
+    
+
+    
 }

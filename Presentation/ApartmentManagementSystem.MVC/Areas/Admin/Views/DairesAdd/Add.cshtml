@@ -1,6 +1,7 @@
-﻿@using ApartmentManagementSystem.MVC.Models.Request
+﻿@using ApartmentManagementSystem.MVC.Areas.Admin.Models
 @await Component.InvokeAsync("NToastNotify")
-@model DairesRequest
+@model DairesAddModel
+
 @{
     ViewData["Title"] = "Daires";
 }
@@ -9,6 +10,7 @@
 {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
+
 
 <div class="container mt-5">
     <div class="row">
@@ -46,6 +48,7 @@
                         <span class="text-danger" asp-validation-for="UserId"></span>
                     </div>
                 </div>
+
 
                 <div class="mb-3 row">
                     <label for="Subscriptions" class="col-md-4 col-form-label">Aidat</label>
