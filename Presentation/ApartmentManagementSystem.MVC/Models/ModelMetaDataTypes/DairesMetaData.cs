@@ -15,7 +15,7 @@ namespace ApartmentManagementSystem.MVC.Models.ModelMetaDataTypes
 
 
         [Required(ErrorMessage = "Lütfen daire sahibinin bilgilerini giriniz.")]
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
 
 
         [Required(ErrorMessage = "Lütfen daire aidatını giriniz.")]
