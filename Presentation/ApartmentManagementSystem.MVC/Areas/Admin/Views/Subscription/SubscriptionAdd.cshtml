@@ -1,0 +1,31 @@
+﻿@using ApartmentManagementSystem.Domain.Entities
+
+@model List<Daire>
+
+<h1>Aidat Girişi</h1>
+
+<form method="post" action="SubscriptionEntry">
+    <tr>
+        <td colspan="2">
+            <label for="price">Aidat Miktarı:</label>
+            <input type="text" id="price" name="price" />
+        </td>
+    </tr>
+    <button type="submit">Kaydet</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Daire No</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>Floor : @Model[i].floorNo No : @Model[i].daireNo</td>
+            </tr>
+        }
+    </tbody>
+</table>
