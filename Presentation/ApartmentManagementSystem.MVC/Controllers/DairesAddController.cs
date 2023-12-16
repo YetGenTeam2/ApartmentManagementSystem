@@ -8,7 +8,7 @@ using Resend;
 
 namespace ApartmentManagementSystem.MVC.Controllers
 {
-    public class DairesController : Controller
+    public class DairesAddController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IToastNotification _toastNotification;
@@ -16,7 +16,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
         private readonly IResend _resend;
         private readonly UserManager<AppUser> _userManager;
 
-        public DairesController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager, ApartmentManagementSystemDbContext context)
+        public DairesAddController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager, ApartmentManagementSystemDbContext context)
         {
             _logger = logger;
             _toastNotification = toastNotification;
