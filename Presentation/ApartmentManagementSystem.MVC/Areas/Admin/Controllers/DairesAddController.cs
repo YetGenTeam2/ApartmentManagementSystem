@@ -1,5 +1,5 @@
 ﻿using ApartmentManagementSystem.Domain.Entities;
-using ApartmentManagementSystem.MVC.Models.Request;
+using ApartmentManagementSystem.MVC.Areas.Admin.Models;
 using ApartmentManagementSystem.Persistance.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -44,7 +44,7 @@ namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(DairesRequest request)
+        public async Task<IActionResult> Add(DairesAddModel request)
         {
 
             if (!ModelState.IsValid)
