@@ -22,15 +22,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Ana Sayfa</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="Admin" asp-controller="Home" asp-action="UserList">Üye Liste</a>
                         </li>
+
+
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-controller="Member" asp-action="logout">Çıkış Yap</a>
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="DairesAdd" asp-action="Add">Daire Bilgileri İşlemleri</a>
                         </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="Admin" asp-controller="Home" asp-action="ContactMessages">İletişim Mesajları</a>
                         </li>
+
+
+						<li class="nav-item">
+							<a class="nav-link text-light" asp-controller="Member" asp-action="logout">Çıkış Yap</a>
+						</li>
                     </ul>
                 </div>
             </div>
