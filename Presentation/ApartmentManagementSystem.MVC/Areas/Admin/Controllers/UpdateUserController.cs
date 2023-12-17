@@ -5,6 +5,7 @@ using ApartmentManagementSystem.MVC.Areas.Admin.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using ApartmentManagementSystem.Persistance.Context;
 
 namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
 {
@@ -14,11 +15,11 @@ namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
     public class UpdateUserController : Controller
     {
         private readonly UserManager<AppUser> _userManager; // Assuming UserManager<AppUser> is available
-
-        public UpdateUserController(UserManager<AppUser> userManager)
+        private readonly ApartmentManagementSystemDbContext _context;
+        public UpdateUserController(UserManager<AppUser> userManager, ApartmentManagementSystemDbContext context)
         {
             _userManager = userManager;
-            
+            _context = context;
         }
 
         // GET: /Admin/UpdateUser/Edit
@@ -85,12 +86,13 @@ namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(string id)
         {
             var userToDelete = await _userManager.FindByIdAsync(id);
+            var daire = _context.daires.FirstOrDefault(x => x.user.Id.ToString() == id);
 
             if (userToDelete == null)
             {
                 return NotFound();
             }
-
+            
             var result = await _userManager.DeleteAsync(userToDelete);
 
             if (result.Succeeded)
