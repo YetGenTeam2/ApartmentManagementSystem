@@ -86,13 +86,18 @@ namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(string id)
         {
             var userToDelete = await _userManager.FindByIdAsync(id);
-            var daire = _context.daires.FirstOrDefault(x => x.user.Id.ToString() == id);
 
+            var daire = _context.daires.FirstOrDefault(x => x.user.Id == id);
+
+            var nullUser = await _userManager.FindByIdAsync("3c53bf58 - ea5c - 4435 - 8229 - 0831d41a056a");
             if (userToDelete == null)
             {
                 return NotFound();
             }
-            
+            if (daire != null)
+            {
+                daire.user = nullUser;
+            }
             var result = await _userManager.DeleteAsync(userToDelete);
 
             if (result.Succeeded)
