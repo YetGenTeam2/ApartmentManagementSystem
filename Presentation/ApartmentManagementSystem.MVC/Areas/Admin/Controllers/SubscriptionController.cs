@@ -21,10 +21,34 @@ namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult ListSubscriptionPayment()
         {
-            List<Daire> daireList = _context.daires.ToList();
-            return View(daireList);
+            List<Subscription> subscriptionList = _context.subscriptions
+                      .Where(s => s.isPaid == false)
+                      .OrderBy(s => s.CreatedOn)
+                      .ToList();
+
+            List<Daire> daireList = new List<Daire>();
+
+            foreach (Subscription subscription in subscriptionList)
+            {
+                Daire daire = _context.daires.FirstOrDefault(d => d.Id == subscription.daire.Id);
+                daireList.Add(daire);
+            }
+
+            SubscriptionViewModel subscriptionModel = new SubscriptionViewModel
+            {
+                Subscriptions = subscriptionList,
+                Daires = daireList
+            };
+
+            return View(subscriptionModel);
+        }
+
+        public class SubscriptionViewModel
+        {
+            public List<Subscription> Subscriptions { get; set; }
+            public List<Daire> Daires { get; set; }
         }
 
         [HttpPost]
