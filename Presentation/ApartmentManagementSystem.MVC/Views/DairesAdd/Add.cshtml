@@ -1,5 +1,7 @@
 ﻿@using ApartmentManagementSystem.MVC.Models.Request
+@using ApartmentManagementSystem.MVC.Services
 @await Component.InvokeAsync("NToastNotify")
+@inject IToasterService toastService
 @model DairesRequest
 @{
     ViewData["Title"] = "Daires";
@@ -19,6 +21,7 @@
             {
                 <div class="alert alert-info" role="alert">
                     @TempData["SuccessMessage"]
+                    toastService.ShowSuccess("Success")
                 </div>
             }
 
