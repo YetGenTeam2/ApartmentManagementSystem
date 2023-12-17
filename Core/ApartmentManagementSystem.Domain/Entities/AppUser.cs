@@ -12,6 +12,7 @@ namespace ApartmentManagementSystem.Domain.Entities
 
         public string firstName { get; set; }
         public string lastName { get; set; }
+        //public bool IsActive { get; set; }
         public List<Daire> daires { get; set; }
 
     }
