@@ -7,6 +7,7 @@
 
 ## ✨ Proje Açıklaması ✨
 
+Bu apartman yönetim sistemi, kullanıcıların kayıt olma, giriş yapma ve çıkış yapma işlemlerini yönetir. Proje, admin ve user rollerine ayrılmış panellere sahiptir. Admin paneli, kullanıcı ve daire yönetimi, rol yönetimi, iletişim mesajlarını görüntüleme gibi özellikleri içerir. User paneli ise kendi atanmış aidat bilgilerini görüntüleme, ödeme yapabilme ve yöneticiye mesaj gönderme gibi özellikleri kullanıcılara sunar. Proje aynı zamanda Identity sistemi, role bazlı yetkilendirme ve session yönetimi gibi temel özellikleri de içermektedir.
 
 ## 📍 Projeye Eklenen Özellikler 📍
 Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çıkış yapma işlemleri sağlandı. Ayrıca, sistemde iki farklı rol olan Admin ve User için ayrı paneller oluşturuldu. Admin paneli, kullanıcı yönetimi, rol yönetimi ve iletişim mesajlarını görüntüleme gibi özelliklerle donatıldı. User panelinde ise kullanıcılar, adminlere mesaj gönderme özelliğine sahip oldu.
@@ -28,9 +29,8 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
     - Admin panelinde kullanıcı yönetimi, rol yönetimi ve iletişim mesajlarını görüntüleme özellikleri eklendi.
     - User panelinde adminlere mesaj gönderme özelliği sağlandı.
 
-- ***ession Yönetimi:***
-  - Session yönetimi kuruldu.
-  -
+  - ***Session Yönetimi:***
+    - Session yönetimi kuruldu.
 - **Nazlican ŞAHİN**
   -
 
