@@ -51,7 +51,6 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 |  |  | 
 | -------- | ------ | 
 |**Furkan Mert MISIRLI**|  |
-|**Celal KARAHAN**| Resend kullanarak doğrulama yapmak istenmiş ancak domain sahipliği olmadığı için kurulum gerçeleştirilemedi.
-Admin ve User gibi iki ayrı alanın olması nedeniyle route problemleri yaşandı.| 
+|**Celal KARAHAN**| Resend kullanarak doğrulama yapmak istenmiş ancak domain sahipliği olmadığı için kurulum gerçeleştirilemedi. Admin ve User gibi iki ayrı alanın olması nedeniyle route problemleri yaşandı.| 
 |**Nazlican ŞAHİN**| |  
 |**Nejla KÜÇÜK**||
