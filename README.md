@@ -35,7 +35,6 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
       
 - **Nazlican ŞAHİN**
   -
-
 - **Nejla KÜÇÜK**
   - Core ve Infrastructure katmanını oluşturdum.
   - Admin tarafından daire bilgilerinin girişi yapıldı.
