@@ -4,7 +4,7 @@
 @inject IToasterService toastService
 @model DairesRequest
 @{
-    ViewData["Title"] = "Daires";
+    ViewData["Title"] = "Daire Giriş Sayfası";
 }
 
 @section Scripts
@@ -25,7 +25,7 @@
                 </div>
             }
 
-            <form asp-controller="DairesAdd" asp-action="Add" method="post">
+            <form asp-controller="AddDaires" asp-action="Add" method="post">
                 <div class="mb-3 row">
                     <label for="DaireNo" class="col-md-4 col-form-label">Daire No</label>
                     <div class="col-sm-8">

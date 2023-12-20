@@ -1,15 +1,17 @@
 ﻿using ApartmentManagementSystem.Domain.Entities;
 using ApartmentManagementSystem.MVC.Models.Request;
 using ApartmentManagementSystem.Persistance.Context;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
 using Resend;
 
-namespace ApartmentManagementSystem.MVC.Controllers
+namespace ApartmentManagementSystem.MVC.Areas.Admin.Controllers
 {
-    
-    public class DairesAddController : Controller
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+    public class AddDairesController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IToastNotification _toastNotification;
@@ -17,7 +19,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
         private readonly IResend _resend;
         private readonly UserManager<AppUser> _userManager;
 
-        public DairesAddController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager, ApartmentManagementSystemDbContext context)
+        public AddDairesController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager, ApartmentManagementSystemDbContext context)
         {
             _logger = logger;
             _toastNotification = toastNotification;
@@ -40,7 +42,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
             return View();
         }
 
-        [HttpPost] // https://localhost:7063/DairesAdd/Add
+        [HttpPost] 
         public async Task<IActionResult> Add(DairesRequest request)
         {
 
@@ -68,7 +70,7 @@ namespace ApartmentManagementSystem.MVC.Controllers
                 AppUser DaireUser = new AppUser
                 {
                     UserName = daire.user.UserName,
-                    firstName = daire.user.firstName, 
+                    firstName = daire.user.firstName,
                     lastName = daire.user.lastName,
                     PhoneNumber = daire.user.PhoneNumber,
                     Email = daire.user.Email
@@ -78,14 +80,14 @@ namespace ApartmentManagementSystem.MVC.Controllers
                 daire.subscriptions = new List<Subscription>();
 
                 // Subscriptions'ları request.Subscriptions'tan kopyala               
-                    var subscription = new Subscription
-                    {
-                        price = request.Subscriptions,
-                        isPaid = false // Varsayılan değeri false olarak ayarla
-                    };
+                var subscription = new Subscription
+                {
+                    price = request.Subscriptions,
+                    isPaid = false // Varsayılan değeri false olarak ayarla
+                };
 
-                    daire.subscriptions.Add(subscription);   
-                
+                daire.subscriptions.Add(subscription);
+
                 daire.CreatedOn = DateTime.UtcNow;
 
                 // Daire nesnesini veritabanına ekleyin
