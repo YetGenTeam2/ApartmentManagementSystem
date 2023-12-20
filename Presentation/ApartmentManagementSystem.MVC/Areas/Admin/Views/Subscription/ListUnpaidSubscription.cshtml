@@ -1,0 +1,55 @@
+﻿@using static ApartmentManagementSystem.MVC.Areas.Admin.Controllers.SubscriptionController
+
+
+@model SubscriptionViewModel
+
+@model SubscriptionViewModel
+
+<h1>List Subscription Payment</h1>
+
+<!-- Subscriptions List -->
+<h2>Subscriptions</h2>
+<table>
+    <thead>
+        <tr>
+            <th>DaireId</th>
+            <th>StartDate</th>
+            <th>Price</th>
+            <!-- Diğer Subscription özellikleri -->
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i=0;i<Model.Subscriptions.Count; i++)
+        {
+            <tr>
+                <td>@Model.Daires[i].Id</td>
+                <td>@Model.Subscriptions[i].CreatedOn</td>
+                <td>@Model.Subscriptions[i].price</td>
+                <!-- Diğer Subscription özellikleri -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Daires List -->
+<h2>Daires</h2>
+<table>
+    <thead>
+        <tr>
+            <th>DaireID</th>
+            <th>DaireAdi</th>
+            <!-- Diğer Daire özellikleri -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var daire in Model.Daires)
+        {
+            <tr>
+                <td>@daire.DaireID</td>
+                <td>@daire.DaireAdi</td>
+                <!-- Diğer Daire özellikleri -->
+            </tr>
+        }
+    </tbody>
+</table>
+
