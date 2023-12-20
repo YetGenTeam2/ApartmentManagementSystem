@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ApartmentManagementSystem.MVC.styles.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
@@ -29,6 +33,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="Admin" asp-controller="Home" asp-action="UserList">Üye Liste</a>
                         </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AddDaires" asp-action="Add">Daire Ekle</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="default" asp-controller="Member" asp-action="logout">Çıkış Yap</a>
                         </li>
