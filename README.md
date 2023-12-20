@@ -17,6 +17,7 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
   - ***Subscription Yönetimi ve Listeleme:***
     - Tüm Dairelere tek işlemde aidat bilgisi atandı.
     - Aidatların ödenme durumuna göre listelenmesi sağlandı.
+    - İlgili sayfaların tasarımı ve controllerlar ile bağlantıları tamamlandı.
 - **Celal KARAHAN**
   - ***Identity Sistemi ve Kullanıcı Yönetimi:***
     - Kullanıcı kayıt olma, giriş yapma ve çıkış yapma işlemlerini sağlayan Identity sistemi kuruldu.
