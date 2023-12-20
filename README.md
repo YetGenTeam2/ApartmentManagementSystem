@@ -11,6 +11,7 @@ Bu apartman yönetim sistemi, kullanıcıların kayıt olma, giriş yapma ve ç�
 
 ## 📍 Projeye Eklenen Özellikler 📍
 Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çıkış yapma işlemleri sağlandı. Ayrıca, sistemde iki farklı rol olan Admin ve User için ayrı paneller oluşturuldu. Admin paneli, kullanıcı yönetimi, rol yönetimi ve iletişim mesajlarını görüntüleme gibi özelliklerle donatıldı. User panelinde ise kullanıcılar, adminlere mesaj gönderme özelliğine sahip oldu.
+
 ## 📌 Projeye Eklenen Özellikler (Detaylı) 📌
 - **Furkan Mert MISIRLI**
   - 
@@ -31,19 +32,21 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 
   - ***Session Yönetimi:***
     - Session yönetimi kuruldu.
+      
 - **Nazlican ŞAHİN**
   -
 
 - **Nejla KÜÇÜK**
-  - 
+  - Core ve Infrastructure katmanını oluşturdum.
+  - Admin tarafından daire bilgilerinin girişi yapıldı.
 
 ## 👩‍💻 Görev Dağılımı 👨‍💻
 |  |  | 
 | -------- | ------ | 
-|**Furkan Mert MISIRLI**|  |
+|**Furkan Mert MISIRLI**| |
 |**Celal KARAHAN**| identity yapısnın kurulması| 
 |**Nazlican ŞAHİN**| |  
-|**Nejla KÜÇÜK**||
+|**Nejla KÜÇÜK**|Core ve Infrastructure katmanı ve daire bilgilerini giriş |
 
 
 ## 📛 Yaşanılan Problemler📛
@@ -53,4 +56,4 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 |**Furkan Mert MISIRLI**|  |
 |**Celal KARAHAN**| Resend kullanarak doğrulama yapmak istenmiş ancak domain sahipliği olmadığı için kurulum gerçeleştirilemedi. Admin ve User gibi iki ayrı alanın olması nedeniyle route problemleri yaşandı.| 
 |**Nazlican ŞAHİN**| |  
-|**Nejla KÜÇÜK**||
+|**Nejla KÜÇÜK**|Daire bilgilerini giriş kısmında admin yetkilendirmesini yapma konusunda problem yaşadım. |
