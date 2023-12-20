@@ -14,6 +14,9 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 
 ## 📌 Projeye Eklenen Özellikler (Detaylı) 📌
 - **Furkan Mert MISIRLI**
+  - ***Subscription Yönetimi ve Listeleme:***
+    - Tüm Dairelere tek işlemde aidat bilgisi atandı.
+    - Aidatların ödenme durumuna göre listelenmesi sağlandı.
 - **Celal KARAHAN**
   - ***Identity Sistemi ve Kullanıcı Yönetimi:***
     - Kullanıcı kayıt olma, giriş yapma ve çıkış yapma işlemlerini sağlayan Identity sistemi kuruldu.
@@ -41,7 +44,7 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 ## 👩‍💻 Görev Dağılımı 👨‍💻
 |  |  | 
 | -------- | ------ | 
-|**Furkan Mert MISIRLI**| |
+|**Furkan Mert MISIRLI**| Aidat ile ekleme ve listeleme ilgili işlemler|
 |**Celal KARAHAN**| identity yapısnın kurulması| 
 |**Nazlican ŞAHİN**| |  
 |**Nejla KÜÇÜK**|Core ve Infrastructure katmanı ve daire bilgilerini giriş |
@@ -51,7 +54,7 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 
 |  |  | 
 | -------- | ------ | 
-|**Furkan Mert MISIRLI**|  |
+|**Furkan Mert MISIRLI**| Ödenmemiş aidatların listelenmesi sırasında her daire bilgisi getirmekte zorluk yaşadım.  |
 |**Celal KARAHAN**| Resend kullanarak doğrulama yapmak istenmiş ancak domain sahipliği olmadığı için kurulum gerçeleştirilemedi. Admin ve User gibi iki ayrı alanın olması nedeniyle route problemleri yaşandı.| 
 |**Nazlican ŞAHİN**| |  
 |**Nejla KÜÇÜK**|Daire bilgilerini giriş kısmında admin yetkilendirmesini yapma konusunda problem yaşadım. |
