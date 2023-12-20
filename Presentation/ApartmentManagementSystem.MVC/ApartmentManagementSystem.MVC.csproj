@@ -28,8 +28,4 @@
     <ProjectReference Include="..\..\Infrastructure\ApartmentManagementSystem.Persistance\ApartmentManagementSystem.Persistance.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\User\Models\" />
-  </ItemGroup>
-
 </Project>

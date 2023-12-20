@@ -14,12 +14,14 @@ namespace ApartmentManagementSystem.MVC.Controllers
         private readonly IToastNotification _toastNotification;
         private readonly ApartmentManagementSystemDbContext _context;
         private readonly IResend _resend;
+        private readonly UserManager<AppUser> _userManager;
 
-        public DairesController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend)
+        public DairesController(ILogger<HomeController> logger, IToastNotification toastNotification, IResend resend, UserManager<AppUser> userManager)
         {
-            _logger = logger;   
+            _logger = logger;
             _toastNotification = toastNotification;
-            _resend = resend;           
+            _resend = resend;
+            _userManager = userManager;
         }
 
 
@@ -36,8 +38,16 @@ namespace ApartmentManagementSystem.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddDaires(DairesRequest request)
+        public async Task<IActionResult> AddDaires( DairesRequest request)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            _toastNotification.AddSuccessToastMessage("Daire bilgileri başarıyla kaydedildi.");
+
             Daire daire = new ();
             daire.daireNo = request.DaireNo;
             daire.floorNo = request.FloorNo;
@@ -51,9 +61,11 @@ namespace ApartmentManagementSystem.MVC.Controllers
 
             daire.CreatedOn = DateTime.UtcNow;
 
-            _toastNotification.AddSuccessToastMessage("Daire bilgileri başarıyla kaydedildi.");
+
 
             return View();
+
+
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿@using ApartmentManagementSystem.MVC.Areas.Admin.Models;
+@model UpdateUserViewModel
+
+@{
+    ViewData["Title"] = "Update Daire";
+}
+
+<h1>Update User</h1>
+
+<form asp-controller="UpdateDaire" asp-action="UpdateDaire" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+
+</form>
+<form asp-controller="UpdateUser" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+</form>
