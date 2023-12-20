@@ -14,7 +14,6 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
 
 ## 📌 Projeye Eklenen Özellikler (Detaylı) 📌
 - **Furkan Mert MISIRLI**
-  - 
 - **Celal KARAHAN**
   - ***Identity Sistemi ve Kullanıcı Yönetimi:***
     - Kullanıcı kayıt olma, giriş yapma ve çıkış yapma işlemlerini sağlayan Identity sistemi kuruldu.
@@ -34,7 +33,7 @@ Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çık�
     - Session yönetimi kuruldu.
       
 - **Nazlican ŞAHİN**
-  -
+  
 - **Nejla KÜÇÜK**
   - Core ve Infrastructure katmanını oluşturdum.
   - Admin tarafından daire bilgilerinin girişi yapıldı.
