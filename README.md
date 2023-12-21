@@ -1,61 +1,63 @@
-# 🎶Apartman Yönetim Sistemi 🎶
-## 🚨 Bize Ulaşın 🚨
+# 🎶 Apartment Management System 🎶
+
+## 🚨 Contact Us 🚨
 🌐 [Furkan Mert Mısırlı Linkedin](http://www.linkedin.com/in/furkan-mert-mısırlı)  
 🌐 [Celal Karahan Linkedin](https://www.linkedin.com/in/celal-karahan51/)
-🌐 [Nazlıcan Şahin Linkedin]  
+🌐 [Nazlıcan Şahin Linkedin](https://www.linkedin.com/in/nazlican-sahin-/)
 🌐 [Nejla Küçük Linkedin](https://www.linkedin.com/in/nkucuk/)
 
-## ✨ Proje Açıklaması ✨
+## ✨ Project Description ✨
+This apartment management system manages user registration, login, and logout operations. The project is divided into admin and user panels. The admin panel includes features such as user and apartment management, role management, and viewing communication messages. The user panel allows users to view their assigned dues, make payments, and send messages to administrators. The project also includes fundamental features such as the Identity system, role-based authorization, and session management.
 
-Bu apartman yönetim sistemi, kullanıcıların kayıt olma, giriş yapma ve çıkış yapma işlemlerini yönetir. Proje, admin ve user rollerine ayrılmış panellere sahiptir. Admin paneli, kullanıcı ve daire yönetimi, rol yönetimi, iletişim mesajlarını görüntüleme gibi özellikleri içerir. User paneli ise kendi atanmış aidat bilgilerini görüntüleme, ödeme yapabilme ve yöneticiye mesaj gönderme gibi özellikleri kullanıcılara sunar. Proje aynı zamanda Identity sistemi, role bazlı yetkilendirme ve session yönetimi gibi temel özellikleri de içermektedir.
+## 📍 Added Features to the Project 📍
+This project provides basic user management functionalities such as registration, login, and logout. Additionally, separate panels were created for two different roles in the system: Admin and User. The Admin panel is equipped with features for user management, role management, and viewing communication messages. In the User panel, users have the ability to send messages to administrators.
 
-## 📍 Projeye Eklenen Özellikler 📍
-Bu projede temel kullanıcı yönetimi için kayıt olma, giriş yapma ve çıkış yapma işlemleri sağlandı. Ayrıca, sistemde iki farklı rol olan Admin ve User için ayrı paneller oluşturuldu. Admin paneli, kullanıcı yönetimi, rol yönetimi ve iletişim mesajlarını görüntüleme gibi özelliklerle donatıldı. User panelinde ise kullanıcılar, adminlere mesaj gönderme özelliğine sahip oldu.
-
-## 📌 Projeye Eklenen Özellikler (Detaylı) 📌
+## 📌 Detailed Added Features to the Project 📌
 - **Furkan Mert MISIRLI**
-  - ***Subscription Yönetimi ve Listeleme:***
-    - Tüm Dairelere tek işlemde aidat bilgisi atandı.
-    - Aidatların ödenme durumuna göre listelenmesi sağlandı.
-    - İlgili sayfaların tasarımı ve controllerlar ile bağlantıları tamamlandı.
+  - ***Subscription Management and Listing:***
+    - Dues were assigned to all apartments in a single operation.
+    - Displaying dues based on payment status was implemented.
+    - Designing relevant pages and completing connections with controllers.
+
 - **Celal KARAHAN**
-  - ***Identity Sistemi ve Kullanıcı Yönetimi:***
-    - Kullanıcı kayıt olma, giriş yapma ve çıkış yapma işlemlerini sağlayan Identity sistemi kuruldu.
-    - Admin ve User rolleri belirlendi.
+  - ***Identity System and User Management:***
+    - Established the Identity system allowing user registration, login, and logout.
+    - Defined Admin and User roles.
 
-  - ***Panellerin Oluşturulması:***
-    - Admin ve User rollerine özel paneller oluşturuldu.
+  - ***Panel Creation:***
+    - Created separate panels for Admin and User roles.
   
-  - ***Yetkilendirme ve Güvenlik:***
-    - Role bazlı yetkilendirme sistemi entegre edildi.
+  - ***Authorization and Security:***
+    - Integrated role-based authorization system.
 
-  - ***İletişim ve Mesajlaşma:***
-    - Admin panelinde kullanıcı yönetimi, rol yönetimi ve iletişim mesajlarını görüntüleme özellikleri eklendi.
-    - User panelinde adminlere mesaj gönderme özelliği sağlandı.
+  - ***Communication and Messaging:***
+    - Added features for user management, role management, and viewing communication messages in the Admin panel.
+    - Provided the ability for users to send messages to administrators in the User panel.
 
-  - ***Session Yönetimi:***
-    - Session yönetimi kuruldu.
-      
+  - ***Session Management:***
+    - Set up session management.
+
 - **Nazlican ŞAHİN**
-  
+  - Performing update operations in the Admin session.
+  - Performing delete operations in the Admin session.
+
 - **Nejla KÜÇÜK**
-  - Core ve Infrastructure katmanını oluşturdum.
-  - Admin tarafından daire bilgilerinin girişi yapıldı.
+  - Created the Core and Infrastructure layers.
+  - Entered apartment information on the Admin side.
 
-## 👩‍💻 Görev Dağılımı 👨‍💻
-|  |  | 
+## 👩‍💻 Task Distribution 👨‍💻
+| | | 
 | -------- | ------ | 
-|**Furkan Mert MISIRLI**| Aidat ile ekleme ve listeleme ilgili işlemler|
-|**Celal KARAHAN**| identity yapısnın kurulması| 
-|**Nazlican ŞAHİN**| |  
-|**Nejla KÜÇÜK**|Core ve Infrastructure katmanı ve daire bilgilerini giriş |
+|**Furkan Mert MISIRLI**| Operations related to adding and listing dues |
+|**Celal KARAHAN**| Establishment of the identity structure | 
+|**Nazlican ŞAHİN**| | Update and delete operations in the Admin area |
+|**Nejla KÜÇÜK**| Core and Infrastructure layers and apartment information entry |
 
+## 📛 Encountered Issues 📛
 
-## 📛 Yaşanılan Problemler📛
-
-|  |  | 
+| | | 
 | -------- | ------ | 
-|**Furkan Mert MISIRLI**| Ödenmemiş aidatların listelenmesi sırasında her daire bilgisi getirmekte zorluk yaşadım.  |
-|**Celal KARAHAN**| Resend kullanarak doğrulama yapmak istenmiş ancak domain sahipliği olmadığı için kurulum gerçeleştirilemedi. Admin ve User gibi iki ayrı alanın olması nedeniyle route problemleri yaşandı.| 
-|**Nazlican ŞAHİN**| |  
-|**Nejla KÜÇÜK**|Daire bilgilerini giriş kısmında admin yetkilendirmesini yapma konusunda problem yaşadım. |
+|**Furkan Mert MISIRLI**| Faced difficulties in fetching information for unpaid dues listing for each apartment. |
+|**Celal KARAHAN**| An attempt was made to perform verification using Resend, but installation could not be completed due to lack of domain ownership. Route problems occurred due to having two separate areas like Admin and User. | 
+|**Nazlican ŞAHİN**| |  Encountered problems regarding assigning admin authorization during apartment information entry. |
+|**Nejla KÜÇÜK**| Encountered problems regarding assigning admin authorization during apartment information entry. |
