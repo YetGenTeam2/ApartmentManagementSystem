@@ -59,5 +59,5 @@ This project provides basic user management functionalities such as registration
 | -------- | ------ | 
 |**Furkan Mert MISIRLI**| Faced difficulties in fetching information for unpaid dues listing for each apartment. |
 |**Celal KARAHAN**| An attempt was made to perform verification using Resend, but installation could not be completed due to lack of domain ownership. Route problems occurred due to having two separate areas like Admin and User. | 
-|**Nazlican ŞAHİN**| I encountered issues with updating and deleting due to working with related tables. |
+|**Nazlıcan ŞAHİN**| I encountered issues with updating and deleting due to working with related tables. |
 |**Nejla KÜÇÜK**| Encountered problems regarding assigning admin authorization during apartment information entry. |
