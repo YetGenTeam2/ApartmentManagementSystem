@@ -50,7 +50,7 @@ This project provides basic user management functionalities such as registration
 | -------- | ------ | 
 |**Furkan Mert MISIRLI**| Operations related to adding and listing dues |
 |**Celal KARAHAN**| Establishment of the identity structure | 
-|**Nazlican ŞAHİN**| | Update and delete operations in the Admin area |
+|**Nazlican ŞAHİN**| Update and delete operations in the Admin area |
 |**Nejla KÜÇÜK**| Core and Infrastructure layers and apartment information entry |
 
 ## 📛 Encountered Issues 📛
@@ -59,5 +59,5 @@ This project provides basic user management functionalities such as registration
 | -------- | ------ | 
 |**Furkan Mert MISIRLI**| Faced difficulties in fetching information for unpaid dues listing for each apartment. |
 |**Celal KARAHAN**| An attempt was made to perform verification using Resend, but installation could not be completed due to lack of domain ownership. Route problems occurred due to having two separate areas like Admin and User. | 
-|**Nazlican ŞAHİN**| |  Encountered problems regarding assigning admin authorization during apartment information entry. |
+|**Nazlican ŞAHİN**|  Encountered problems regarding assigning admin authorization during apartment information entry. |
 |**Nejla KÜÇÜK**| Encountered problems regarding assigning admin authorization during apartment information entry. |
